@@ -2,3 +2,4 @@
 *node_modules
 # IGNORE MAC STANDARD FILES
 *.DS_Store
+build/*
