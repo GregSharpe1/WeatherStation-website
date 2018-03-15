@@ -1,0 +1,33 @@
+html, body {
+    height: 100%;
+}
+
+#header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#aboutProject {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#graphSection {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+
+    border: 2px solid black;
+}
+
+#graphInfo {
+    border: 2px solid black;
+}
+
+#graphBox {
+    border: 2px solid black;
+}
+
+#root {
+    display: none;
+}

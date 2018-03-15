@@ -10,6 +10,8 @@
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -25,6 +27,68 @@
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
+
+    <div id="header">
+      <!-- This will load the intro section -->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            some info within the header section
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="aboutProject">
+      <!-- About project -->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            this is the about section
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="graphSection">
+      <!-- This section will display the temperature graph both Indoor/Outdoor and some information on the graph -->
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 text-center"> 
+            <div id="graphBox">
+              <!-- Temperature Chart -->
+              <canvas id="TemperatureChart"></canvas>
+            </div>
+          </div>
+          <div class="col-sm-4 text-center">
+            <div id="graphInfo">
+              information about graph to the left
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="graphSection">
+        <!-- This section will display the temperature graph both Indoor/Outdoor and some information on the graph -->
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 text-center"> 
+              <div id="graphBox">
+                <!-- Temperature Chart -->
+                <canvas id="TemperatureChart"></canvas>
+              </div>
+            </div>
+            <div class="col-sm-4 text-center">
+              <div id="graphInfo">
+                information about graph to the left
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- HIDDEN THE ROOT WITHIN THE CSS TAG FOR ROOT -->
     <div id="root"></div>
     <!--
       This HTML file is a template.
@@ -36,5 +100,31 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
+
+
+    <!-- Testing Chart JS Functionaility -->
+    <script>
+        var ctx = document.getElementById('TemperatureChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+            datasets: [{
+              label: 'apples',
+              data: [12, 19, 3, 17, 6, 3, 7],
+              backgroundColor: "rgba(153,255,51,0.4)"
+            }, {
+              label: 'oranges',
+              data: [2, 29, 5, 5, 2, 3, 10],
+              backgroundColor: "rgba(255,153,0,0.4)"
+            }]
+          }
+        });
+        
+        
+
+
+    </script>
   </body>
 </html>
