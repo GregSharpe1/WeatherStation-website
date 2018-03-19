@@ -2,6 +2,16 @@ html, body {
     height: 100%;
 }
 
+table {
+    margin: 0 auto;
+  }
+  
+canvas {
+    width: 100% !important;
+    max-width: 800px;
+    height: auto !important;
+  }
+  
 #header {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -16,17 +26,17 @@ html, body {
     padding-top: 20px;
     padding-bottom: 20px;
     margin-bottom: 10px;
-
-    border: 2px solid black;
+    border-bottom: 1px dotted #666;
 }
 
 #graphInfo {
-    border: 2px solid black;
+    border: 0px solid #666;
 }
 
 #graphBox {
-    border: 2px solid black;
+    border: 0px solid #666;
 }
 
 #root {
+
 }

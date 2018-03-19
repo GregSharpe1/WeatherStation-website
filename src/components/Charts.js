@@ -3,43 +3,58 @@ import React, {Component} from 'react';
 import {Bar, Line, Pie} from 'react-chartjs-2';
 
 
-// For options see: 
+// For options see:
 // http://www.chartjs.org/docs/latest/
 class Chart extends Component{
     constructor(props){
         super(props);
         this.state = {
             chartData: props.chartData
+        }
     }
-}
+
     static defaultProps = {
         displayTitle: true,
+        titleText: 'Aberystwyth Sensor',
         titleFontSize: '25',
-        displayLegend: true,
+        displayLegend: false,
         legendPosition: 'right',
     }
 
     render() {
         return (
-            <div className="chart">
-                <Line
-                    data={this.state.chartData}
-                    options={{
-                        title: {
-                            display: this.props.displayTitle,
-                            text: 'Largest Cities',
-                            fontSize: this.props.titleFontSize,
-                        },
-                        legend: {
-                            display: this.props.displayLegend,
-                            position: this.props.legendPosition
-                        },
-                        maintainAspectRatio: true,
-                        width:'200',
-                        height:'50'
-                    }}
-                />
+          <div id="graphSection">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-8 text-center">
+                  <div id="graphBox">
+                    <div className="chart">
+                        <Bar
+                            data={this.state.chartData}
+                            options={{
+                                title: {
+                                    display: this.props.displayTitle,
+                                    text: this.props.titleText,
+                                    fontSize: this.props.titleFontSize,
+                                },
+                                legend: {
+                                    display: this.props.displayLegend,
+                                    position: this.props.legendPosition
+                                },
+                                maintainAspectRatio: true
+                            }}
+                        />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4 text-center">
+                  <div id="graphInfo">
+                    { this.props.description }
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         )
     }
 }
