@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Chart from './Charts';
 import moment from 'moment';
-
+import '../assets/previousweather.css'
 
 class PreviousWeather extends Component {
     constructor(props) {

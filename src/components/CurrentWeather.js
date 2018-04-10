@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import '../assets/currentweather.css'
 
 class CurrentWeather extends Component {
     constructor(props) {
