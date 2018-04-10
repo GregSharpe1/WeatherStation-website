@@ -21,7 +21,6 @@ class PreviousWeather extends Component {
               "wind_speed": "Wind speed reading are taken from a standard anemometer like device, measure in metres per second located on top of Aberstwyth's University building.",
               "air_pressure": "Air Pressure readings are taken from a BME280 device, located on top of Aberystwyth Univeristy buildng.",
               "rain_fall": "Rain fall is measured using a standard rain gauge, and is measured using a seasaw type device.",
-              "wind_direction": "Wind Direction"
             }
 
         }
@@ -54,7 +53,7 @@ class PreviousWeather extends Component {
             label: this.state.location,
             data: dataset,
             // Here we'll set the colour of the bars
-            backgroundColor: 'rgb(139,195,74)',
+            backgroundColor: 'rgb(44,62,80)',
           }
         ]
       }
@@ -172,9 +171,6 @@ class PreviousWeather extends Component {
         )
     }
 }
-
-
-
 
 function convertTimestamptoDate(timestamp) {
     // This function will return the timestamp in a human readable format

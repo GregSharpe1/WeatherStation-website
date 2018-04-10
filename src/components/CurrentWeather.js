@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import moment from 'moment';
 import '../assets/currentweather.css'
+
+var WeatherStationLocations = {
+
+}
+
 
 class CurrentWeather extends Component {
     constructor(props) {
@@ -9,13 +15,15 @@ class CurrentWeather extends Component {
         this.loadWeatherInfo = this.loadWeatherInfo.bind(this);
     }
 
+    // Build an allowed location object
+    // Implement a feature for the user to pick from the list
+    
+
     loadWeatherInfo() {
-        // Attempt to match the location based upon URL input, else default to aber
-        var location = 'aber'
-        // Attempt to march the number of requests
-        var count = 1
+        // Attempt to match the location based upon user input, else default to aber
+        var location = this.state.location || 'aber'
         // URL for the API
-        var base_url = "https://api.gregsharpe.co.uk/weather/" + location + "/" + count;
+        var base_url = "https://api.gregsharpe.co.uk/weather/" + location + "/" + 1;
         // Log the url attempted to reach
         console.log("URL attempted to hit: ", base_url)
 
@@ -28,7 +36,6 @@ class CurrentWeather extends Component {
             this.setState({
                 // This json path contains the weather information.
                 data: res.data.data.weather_data,
-                location: res.data.data.location
             });
         })
         // If cannot reach the URL for whatever reason, log the result.
@@ -50,30 +57,70 @@ class CurrentWeather extends Component {
             var weatherReadings = this.state.data.map(sensor => {
                 return (
                     <tr key = {sensor.timestamp}>
-                    <table>
-                    <tr>
-                      <td>Temperature Outdoor: {sensor.payload.temperature_outdoor}</td>
-                    </tr>
-                    <tr>
-                      <td>Temperature Indoor: {sensor.payload.temperature_indoor}</td>
-                    </tr>
-                    <tr>
-                      <td>Humidity Outdoor:  {sensor.payload.humidity_outdoor}</td>
-                    </tr>
-                    <tr>
-                      <td>Humidity Indoor: {sensor.payload.humidity_indoor}</td>
-                    </tr>
-                    <tr>
-                      <td>Rain Fall: {sensor.payload.rain_fall}</td>
-                    </tr>
-                    <tr>
-                      <td>Wind Direction: {sensor.payload.wind_direction}</td>
-                    </tr>
-                    <tr>
-                      <td>Wind Speed: {sensor.payload.wind_speed}</td>
-                    </tr>
-                    
-                    </table>
+                      <div class="container">
+                        <div class="row">
+                          <div class="weather_widgets">
+                            <ul>
+                              <li>
+                                <div class="widget_container">
+                                  <h1>{sensor.payload.temperature_indoor}<small>&#x2103;</small></h1>
+                                  <h3>Temperature Indoor</h3>
+                                  <small>Time: {convertTimestamptoDate(sensor.timestamp)}</small>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="widget_container">
+                                  <h1>{sensor.payload.humidity_outdoor}<small>%</small></h1>
+                                  <h3>Humidity Outdoor</h3>
+                                  <small>Time: {convertTimestamptoDate(sensor.timestamp)}</small>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="widget_container">
+                                  <h1>{sensor.payload.temperature_outdoor}<small>&#x2103;</small></h1>
+                                  <h3>Temperature Outdoor</h3>
+                                  <small>Time: {convertTimestamptoDate(sensor.timestamp)}</small>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="widget_container">
+                                  <h1>{sensor.payload.humidity_indoor}<small>%</small></h1>
+                                  <h3>Humidity Indoor</h3>
+                                  <small>Time: {convertTimestamptoDate(sensor.timestamp)}</small>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="widget_container">
+                                  <h1>{sensor.payload.wind_speed}<small>m/s</small></h1>
+                                  <h3>Wind Speed</h3>
+                                  <small>Time: {convertTimestamptoDate(sensor.timestamp)}</small>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="widget_container">
+                                  <h1>{sensor.payload.wind_direction}</h1>
+                                  <h3>Wind Direction</h3>
+                                  <small>Time: {convertTimestamptoDate(sensor.timestamp)}</small>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="widget_container">
+                                  <h1>{sensor.payload.air_pressure}<small>hPa</small></h1>
+                                  <h3>Air Pressure</h3>
+                                  <small>Time: {convertTimestamptoDate(sensor.timestamp)}</small>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="widget_container">
+                                  <h1>{sensor.payload.rain_fall}<small>mm</small></h1>
+                                  <h3>Rainfall</h3>
+                                  <small>Time: {convertTimestamptoDate(sensor.timestamp)}</small>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
                     </tr>
                 )
             })
@@ -92,5 +139,14 @@ class CurrentWeather extends Component {
         )
     }
 }
+
+function convertTimestamptoDate(timestamp) {
+  // This function will return the timestamp in a human readable format
+
+  // As the moment library doesn't run in milliseconds, convert the number first
+  timestamp = timestamp / 1000;
+  return moment.unix(timestamp).format('HH:mm:ss on DD/MM/YY')
+}
+
 
 export default CurrentWeather;

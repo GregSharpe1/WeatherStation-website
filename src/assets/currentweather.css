@@ -1,0 +1,22 @@
+.weather_widgets ul {
+    list-style-type: none;
+    margin: 0 auto;
+}
+.weather_widgets ul li {
+    display: inline-block;
+    align-content: center;
+    margin: 10px;
+}
+.weather_widgets .widget_container {
+    width: 300px;
+    height: 200px;
+    background-color: #2C3E50;
+    color: #fff;
+    padding: 5%;
+}
+.weather_widgets .widget_container h1 {
+    font-size: 60px;
+}
+.weather_widgets .widget_container small {
+    opacity: .5;
+}
