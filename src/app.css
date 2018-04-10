@@ -1,5 +1,6 @@
 html, body {
     height: 100%;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 table {
@@ -31,6 +32,7 @@ canvas {
 
 #graphInfo {
     border: 0px solid #666;
+    font-size: 14px;
 }
 
 #graphBox {
@@ -39,4 +41,26 @@ canvas {
 
 #root {
 
+}
+
+/* Navigation */
+a {
+    color: #f4f5f6;
+}
+
+a:hover, a:focus {
+	text-decoration: none;
+	color: #7bc3d1;
+}
+
+.navbar-custom {
+	margin-bottom: 0;
+	background-color: #121d1f;
+    border-radius: 0px;
+}
+
+
+
+.navbar-text {
+    text-align: right;
 }

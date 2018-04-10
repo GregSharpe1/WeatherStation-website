@@ -29,9 +29,10 @@ class Chart extends Component{
                 <div class="col-sm-8 text-center">
                   <div id="graphBox">
                     <div className="chart">
-                        <Bar
+                        <Line
                             data={this.state.chartData}
                             options={{
+                                responsive: true,
                                 title: {
                                     display: this.props.displayTitle,
                                     text: this.props.titleText,
@@ -41,8 +42,10 @@ class Chart extends Component{
                                     display: this.props.displayLegend,
                                     position: this.props.legendPosition
                                 },
-                                maintainAspectRatio: true
-                            }}
+                                maintainAspectRatio: true,
+                                
+                                }
+                            }
                         />
                     </div>
                   </div>
