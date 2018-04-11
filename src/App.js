@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router';
-
 import './assets/app.css'
+import AberLogo from './assets/img/aberwx.png'
 
 class App extends Component {
     render(){
@@ -9,11 +9,9 @@ class App extends Component {
             <div>
                 <header>
                     <div id="header">
-                        <div className="container">
-                            <div className="row">
-                                <div className="col-md-12 text-center">
-                                    some info within the header section
-                                </div>
+                        <div className="row">
+                            <div className="col-md-12 text-center">
+                                <img src={AberLogo} height="100" ></img>
                             </div>
                         </div>
                     </div>
@@ -29,9 +27,18 @@ class App extends Component {
                         </nav>
                     </div>          
                 </header>
-              <main>
-                {this.props.children}
-              </main>
+                <main>
+                    {this.props.children}
+                </main>
+                <footer class="page-footer font-small">
+                    <div className="row">
+                        <div className="col-md-12 text-center">
+                            <div className="footer-wrapper">
+                                <small>Copyright &copy; 2018, Greg Sharpe. All rights reserved</small>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
             </div>
           );
     }

@@ -20,7 +20,7 @@ a {
 
 a:hover, a:focus {
 	text-decoration: none;
-	color: #7bc3d1;
+	color: #FFF;
 }
 
 .navbar-custom {
@@ -29,11 +29,21 @@ a:hover, a:focus {
     border-radius: 0px;
 }
 
-.navbar-text {
-}
-
 .navbar .container .wrapper {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
-  }
+}
+
+/* Footer */
+.footer-wrapper {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: #2C3E50;
+    color: #fff;
+    margin-top: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 12px;
+}

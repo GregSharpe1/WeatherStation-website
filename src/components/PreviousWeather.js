@@ -53,7 +53,7 @@ class PreviousWeather extends Component {
             label: this.state.location,
             data: dataset,
             // Here we'll set the colour of the bars
-            backgroundColor: 'rgb(44,62,80)',
+            backgroundColor: 'rgb(140,152,164)',
           }
         ]
       }

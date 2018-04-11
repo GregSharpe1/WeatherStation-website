@@ -23,11 +23,11 @@ class Chart extends Component{
 
     render() {
         return (
-          <div id="graphSection">
+          <div class="graphSection">
             <div class="container">
               <div class="row">
                 <div class="col-sm-8 text-center">
-                  <div id="graphBox">
+                  <div class="graphBox">
                     <div className="chart">
                         <Line
                             data={this.state.chartData}
@@ -35,7 +35,6 @@ class Chart extends Component{
                                 responsive: true,
                                 title: {
                                     display: this.props.displayTitle,
-                                    text: this.props.titleText,
                                     fontSize: this.props.titleFontSize,
                                 },
                                 legend: {
@@ -50,8 +49,9 @@ class Chart extends Component{
                     </div>
                   </div>
                 </div>
-                <div class="col-sm-4 text-center">
-                  <div id="graphInfo">
+                <div class="col-sm-4 chart-description">
+                  <div className="graphInfo">
+                    <h1><b> { this.props.titleText } </b></h1>
                     { this.props.description }
                   </div>
                 </div>
