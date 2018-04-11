@@ -3,3 +3,4 @@
 # IGNORE MAC STANDARD FILES
 *.DS_Store
 build/*
+.vscode/*
