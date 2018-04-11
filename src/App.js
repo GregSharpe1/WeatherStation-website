@@ -20,9 +20,11 @@ class App extends Component {
                     <div id="navbar">
                         <nav className="navbar navbar-custom navbar-fixed-top">
                             <div className="container">
-                                <Link to="/">Home</Link>
-                                <Link to="/current">Current Weather</Link>
-                                <Link to="/previous">Previous Weather</Link>
+                                <div className="wrapper">    
+                                    <Link to="/">Home</Link>
+                                    <Link to="/current">Current Weather</Link>
+                                    <Link to="/previous">Previous Weather</Link>
+                                </div>
                             </div>
                         </nav>
                     </div>          

@@ -6,6 +6,7 @@
     "axios": "^0.18.0",
     "chart.js": "^2.7.2",
     "date-format-timestamp": "^1.0.5",
+    "google-map-react": "^0.34.0",
     "moment": "^2.21.0",
     "react": "^16.2.0",
     "react-chartist": "^0.13.1",
