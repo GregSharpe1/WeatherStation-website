@@ -191,10 +191,5 @@ function convertTitleText(str){
   return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 }
 
-function getFeelsLikeTemp(temperature, wind_speed, humidity){
-  // to work out feels like temperature you need wind speed, temp, and relative humidity
-  // An equation I have used from: https://gist.github.com/jfcarr/e68593c92c878257550d
-  return 35.74 + (0.6215*temperature) - 35.75*(wind_speed*0.16) + ((0.4275*temperature)*(wind_speed**0.16))
-}
 
 export default PreviousWeather;

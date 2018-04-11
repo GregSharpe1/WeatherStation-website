@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 // Bring in the Charts you wish to use here!!!
-import {Bar, Line, Pie} from 'react-chartjs-2';
+import Line from 'react-chartjs-2';
 
 
 // For options see:

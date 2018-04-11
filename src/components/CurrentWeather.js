@@ -3,10 +3,6 @@ import axios from 'axios';
 import moment from 'moment';
 import '../assets/currentweather.css'
 
-var WeatherStationLocations = {
-
-}
-
 
 class CurrentWeather extends Component {
     constructor(props) {
@@ -61,6 +57,13 @@ class CurrentWeather extends Component {
                         <div class="row">
                           <div class="weather_widgets">
                             <ul>
+                              <li>
+                                <div class="widget_container">
+                                  <h1>{getFeelsLikeTemp(sensor.payload.temperature_outdoor, sensor.payload.wind_speed, sensor.payload.humidity_outdoor)}<small>&#x2103;</small></h1>
+                                  <h3>Feels Like</h3>
+                                  <small>Time: {convertTimestamptoDate(sensor.timestamp)}</small>
+                                </div>
+                              </li>
                               <li>
                                 <div class="widget_container">
                                   <h1>{sensor.payload.temperature_indoor}<small>&#x2103;</small></h1>
@@ -146,6 +149,12 @@ function convertTimestamptoDate(timestamp) {
   // As the moment library doesn't run in milliseconds, convert the number first
   timestamp = timestamp / 1000;
   return moment.unix(timestamp).format('HH:mm:ss on DD/MM/YY')
+}
+
+function getFeelsLikeTemp(temperature, wind_speed, humidity){
+  // to work out feels like temperature you need wind speed, temp, and relative humidity
+  // An equation I have used from: https://gist.github.com/jfcarr/e68593c92c878257550d
+  return Math.round(((0.6215*temperature) - 35.75*(wind_speed*0.16) + ((0.4275*temperature)*(wind_speed**0.16))) * 100) / 100
 }
 
 
