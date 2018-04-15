@@ -7,7 +7,7 @@ import { Route, IndexRoute } from 'react-router';
 import App from './App';
 import Home from './components/Home';
 import CurrentWeather from './components/CurrentWeather';
-import PreviousWeather from './components/PreviousWeather';
+import Last24Hours from './components/Last24Hours';
 
 /**
  * All routes go here.
@@ -17,6 +17,6 @@ export default (
   <Route path="/" component={App}>
     <IndexRoute component={Home} />
     <Route path="/current" component={CurrentWeather} />
-    <Route path="/previous" component={PreviousWeather} />
+    <Route path="/last24hours" component={Last24Hours} />
   </Route>
 );

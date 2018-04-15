@@ -21,7 +21,7 @@ class App extends Component {
                                 <div className="wrapper">    
                                     <Link to="/">Home</Link>
                                     <Link to="/current">Current Weather</Link>
-                                    <Link to="/previous">Previous Weather</Link>
+                                    <Link to="/Last24Hours">Last 24 Hours</Link>
                                 </div>
                             </div>
                         </nav>

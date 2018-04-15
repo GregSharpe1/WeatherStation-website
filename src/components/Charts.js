@@ -51,7 +51,7 @@ class Chart extends Component{
                 </div>
                 <div class="col-sm-4 chart-description">
                   <div className="graphInfo">
-                    <h1><b> { this.props.titleText } </b></h1>
+                    <h1><b> <center>{ this.props.titleText } </center></b></h1>
                     { this.props.description }
                   </div>
                 </div>
