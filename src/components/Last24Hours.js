@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Chart from './Charts';
 import moment from 'moment';
-import '../assets/previousweather.css'
+import '../assets/last24hours.css'
 
-class PreviousWeather extends Component {
+class Last24Hours extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -192,4 +192,4 @@ function convertTitleText(str){
 }
 
 
-export default PreviousWeather;
+export default Last24Hours;

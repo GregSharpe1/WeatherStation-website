@@ -8,6 +8,7 @@ import App from './App';
 import Home from './components/Home';
 import CurrentWeather from './components/CurrentWeather';
 import Last24Hours from './components/Last24Hours';
+import PreviousWeather from './components/PreviousWeather';
 
 /**
  * All routes go here.
@@ -18,5 +19,6 @@ export default (
     <IndexRoute component={Home} />
     <Route path="/current" component={CurrentWeather} />
     <Route path="/last24hours" component={Last24Hours} />
+    <Route path="/previous" component={PreviousWeather} />
   </Route>
 );
