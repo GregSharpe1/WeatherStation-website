@@ -63,7 +63,7 @@ class AverageWeather extends Component {
                 <tr key = '1' >
                   <div class="container">
                     <div class="average_weather header">
-                      <p><b>Average Weather Readings:</b></p>
+                      <p><b>Average Weather Readings</b></p>
                     </div>
                     <div class="row">
                       <div class="average_weather weather_widgets">
