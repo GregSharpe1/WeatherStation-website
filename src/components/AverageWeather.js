@@ -62,8 +62,11 @@ class AverageWeather extends Component {
             <tbody>
                 <tr key = '1' >
                   <div class="container">
+                    <div class="average_weather header">
+                      <p><b>Average Weather Readings:</b></p>
+                    </div>
                     <div class="row">
-                      <div class="weather_widgets">
+                      <div class="average_weather weather_widgets">
                         <ul>
                           <li>
                             <div class="widget_container">
@@ -112,10 +115,12 @@ class AverageWeather extends Component {
     } else
     { return (
       <div class="alert alert-danger" role="alert">
-        <h4 class="alert-heading">Oops</h4>
+        <div className='container'>
+          <h4 class="alert-heading">Uh oh ...</h4>
           <p>
-            Looks like something went wrong at this date, no readings were taken. Try another date
+            <small>Looks like weather station data wasn't taken on that data.</small><br /><br /><b>Please try a new date</b>
           </p>
+        </div>
       </div>
     )}
 }}

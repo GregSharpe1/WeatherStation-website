@@ -8,6 +8,8 @@ import '../assets/previousweather.css'
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
+import '../assets/datepicker.css';
+
 import AverageWeather from './AverageWeather';
 
 
@@ -62,32 +64,45 @@ class PreviousWeather extends Component {
       if (!this.state.selected_date == "") {
         return (
           <div>
-            <center>
-              Please enter a date, you wish to see the Weather Readings of.
-              <DatePicker
-                onChange={this.handleSelectDate}
-                maxDate={moment()}
-                selected={this.state.start_date}                
-              />
-            <h1>Previous Weather for: {moment(this.state.start_timestamp).format("DD MMM YYYY")}</h1>
-            <div>
-              <h2>Average Weather</h2>
-              <AverageWeather data={this.state.data} />
+            <div className='date-form'>
+              <div className='container'>
+                <div className='row'>
+                  <h4>Selected Date:</h4>
+                </div>
+                <div className='row'>
+                  <DatePicker
+                    onChange={this.handleSelectDate}
+                    maxDate={moment()}
+                    selected={moment(this.state.selected_date)}  
+                  />
+                </div>
+              </div>
             </div>
-          </center>
-        </div>
+            <div>
+              <div className='container'>
+                <AverageWeather data={this.state.data} />
+              </div>
+            </div>
+          </div>
         )
     } else {
       return (
         <div>
-          <center>
-            Please enter a date, you wish to see the Weather Readings of.
-            <DatePicker
-              selected={this.state.start_date}
-              onChange={this.handleSelectDate}
-              maxDate={moment()}
-            />
-          </center>
+          <div className='date-form'>
+            <div className='container'>
+              <div className='row'>
+                <h4>Please enter a date, you wish to see the weather readings of.</h4>
+                <h6>Click the date below to open the select dialog.</h6>
+              </div>
+              <div className='row'>
+                <DatePicker
+                  selected={moment()}
+                  onChange={this.handleSelectDate}
+                  maxDate={moment()}
+                />
+              </div>
+            </div>
+          </div>
         </div>
       )
     } 
