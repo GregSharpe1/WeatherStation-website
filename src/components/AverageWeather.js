@@ -111,11 +111,12 @@ class AverageWeather extends Component {
         )
     } else
     { return (
-        <div>
-            <p>
-               Oops, something went wrong at this date, no readings were taken. Try another date
-            </p>
-        </div>
+      <div class="alert alert-danger" role="alert">
+        <h4 class="alert-heading">Oops</h4>
+          <p>
+            Looks like something went wrong at this date, no readings were taken. Try another date
+          </p>
+      </div>
     )}
 }}
 

@@ -19,7 +19,7 @@ class PreviousWeather extends Component {
         super(props);
       	var now = moment()
         this.state = {
-          data: [],
+          data: [], 
           selected_date: "",
           start_timestamp: now.startOf('day').valueOf(),
           end_timestamp: now.endOf('day').valueOf()
@@ -65,8 +65,9 @@ class PreviousWeather extends Component {
             <center>
               Please enter a date, you wish to see the Weather Readings of.
               <DatePicker
-                onSelect={this.state.start_date}
                 onChange={this.handleSelectDate}
+                maxDate={moment()}
+                selected={this.state.start_date}                
               />
             <h1>Previous Weather for: {moment(this.state.start_timestamp).format("DD MMM YYYY")}</h1>
             <div>
@@ -82,7 +83,7 @@ class PreviousWeather extends Component {
           <center>
             Please enter a date, you wish to see the Weather Readings of.
             <DatePicker
-              onSelect={this.state.start_date}
+              selected={this.state.start_date}
               onChange={this.handleSelectDate}
               maxDate={moment()}
             />
