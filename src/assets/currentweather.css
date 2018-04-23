@@ -1,6 +1,7 @@
 .weather_widgets ul {
     list-style-type: none;
     margin: 0 auto;
+
 }
 .weather_widgets ul li {
     display: inline-block;

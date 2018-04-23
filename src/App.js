@@ -31,7 +31,7 @@ class App extends Component {
                 <main>
                     {this.props.children}
                 </main>
-                <footer class="page-footer font-small">
+                <footer class="footer page-footer font-small">
                     <div className="row">
                         <div className="col-md-12 text-center">
                             <div className="footer-wrapper">

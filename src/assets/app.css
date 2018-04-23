@@ -1,6 +1,12 @@
 html, body {
     height: 100%;
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
 }
 
 table {
@@ -36,8 +42,8 @@ a:hover, a:focus {
 }
 
 /* Footer */
-.footer-wrapper {
-    position: relative;
+.footer {
+    position: fixed;
     bottom: 0;
     width: 100%;
     background-color: #2C3E50;

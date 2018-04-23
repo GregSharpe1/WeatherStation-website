@@ -20,7 +20,7 @@ class PreviousWeather extends Component {
       	var now = moment()
         this.state = {
           data: [],
-          selected_date: now,
+          selected_date: "",
           start_timestamp: now.startOf('day').valueOf(),
           end_timestamp: now.endOf('day').valueOf()
         };
@@ -58,8 +58,8 @@ class PreviousWeather extends Component {
     }
 
     render() {
-      console.log("STATE: ", this.state)
-      if (this.state.data) {
+
+      if (!this.state.selected_date == "") {
         return (
           <div>
             <center>
@@ -76,6 +76,19 @@ class PreviousWeather extends Component {
           </center>
         </div>
         )
+    } else {
+      return (
+        <div>
+          <center>
+            Please enter a date, you wish to see the Weather Readings of.
+            <DatePicker
+              onSelect={this.state.start_date}
+              onChange={this.handleSelectDate}
+              maxDate={moment()}
+            />
+          </center>
+        </div>
+      )
     } 
   }
 }
